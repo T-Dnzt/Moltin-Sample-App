@@ -5,7 +5,11 @@ class ProductsController < ApplicationController
                                 limit(12).
                                 offset(offset).
                                 sort('name').
-                                with(:files).filter(eq: { status: 'live' })
+                                with(:files).
+                                filter(eq: { status: 'live' })
+
+    @query = params[:query]
+    @products = @products.filter(like: { name: "*#{@query}*" }) if @query.present?
     @page = @products.response_meta['page']
   end
 

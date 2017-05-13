@@ -11,7 +11,7 @@
           <br/><br/>
           <div class='row'>
             <div class='col-xs-12'>
-              <%= link_to add_carts_path(product_id: product.id), method: :patch, class: 'btn btn-primary' do %>
+              <%= link_to add_carts_path(product_id: product.id), method: :post, class: 'btn btn-primary' do %>
                 <%= "Add To Cart (#{money(product.price.first)})" %>
               <% end %>
               <span class='pull-right'>

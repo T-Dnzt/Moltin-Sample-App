@@ -9,13 +9,13 @@ class CartsController < ApplicationController
   end
 
   def remove
-
+    cart.remove(params[:cart_item_id])
+    redirect_to carts_path
   end
 
   private
 
   def cart
-    p session[:cart_id]
     @cart ||= moltin.carts.get(cart_ref)
   end
 
