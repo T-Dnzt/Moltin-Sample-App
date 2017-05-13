@@ -1,13 +1,28 @@
 <%- @products.each_slice(4) do |slice| %>
   <div class='row'>
     <%- slice.each do |product| %>
-      <div class='col-xs-6 col-md-4'>
+      <div class='col-xs-12 col-sm-6 col-md-3'>
         <div class='well'>
-          <%= image_tag @products.included.find('files', product.files.first.id).href %>
+          <%- if file = @products.included.find('files', product.files.first.id) %>
+            <%= image_tag file.href %>
+          <% end %>
           <br/>
           <%= link_to product.name, product_path(product.id) %>
+          <br/><br/>
+          <div class='row'>
+            <div class='col-xs-12'>
+              <%= link_to add_carts_path(product_id: product.id), method: :patch, class: 'btn btn-primary' do %>
+                <%= "Add To Cart (#{money(product.price.first)})" %>
+              <% end %>
+              <span class='pull-right'>
+                <%= product.meta['stock']['level'] %> Left
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     <% end %>
   </div>
 <% end %>
+
+<%= render 'shared/pagination', page: @page %>

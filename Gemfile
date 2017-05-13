@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'money'
+
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'moltin', path: '../ruby-sdk'

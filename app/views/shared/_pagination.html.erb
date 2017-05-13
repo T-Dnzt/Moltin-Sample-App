@@ -1,0 +1,25 @@
+<nav aria-label="Page navigation" class='text-center'>
+  <ul class="pagination">
+    <% unless page['current'] == 1 %>
+      <li>
+        <%= link_to root_path(page: 1) do %>
+          <span aria-hidden="true">&laquo;</span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to page['current'] - 1, root_path(page: page['current'] - 1) %>
+      </li>
+    <% end %>
+
+    <li class="active"><a href="#"><%= page['current'] %> <span class="sr-only">(current)</span></a></li>
+
+    <% unless page['current'] == page['total'] %>
+      <li><%= link_to page['current'] + 1, root_path(page: page['current'] + 1) %></li>
+      <li>
+        <%= link_to root_path(page: page['total']) do %>
+          <span aria-hidden="true">&raquo;</span>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</nav>

@@ -9,10 +9,19 @@
       <br/><br/>
       <div class='row'>
         <%- @product.files.each do |file| %>
-          <div class='col-xs-12 col-md-3'>
-            <%= image_tag @product.included.find('files', file.id).href %>
-          </div>
+          <%- if included_file = @product.included.find('files', file.id) %>
+            <div class='col-xs-12 col-md-3'>
+              <%= image_tag included_file.href %>
+            </div>
+          <% end %>
         <% end %>
+      </div>
+      <div class='row'>
+        <div class='col-xs-12'>
+          <%= link_to add_carts_path(product_id: @product.id), class: 'btn btn-primary', method: :patch do %>
+            <%= "Add To Cart (#{money(@product.price.first)})" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
