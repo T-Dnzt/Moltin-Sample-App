@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'money'
-
+gem 'font-awesome-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'moltin', path: '../ruby-sdk'

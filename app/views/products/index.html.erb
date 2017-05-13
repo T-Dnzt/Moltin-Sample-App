@@ -3,8 +3,10 @@
     <%- slice.each do |product| %>
       <div class='col-xs-12 col-sm-6 col-md-3'>
         <div class='well'>
-          <%- if file = @products.included.find('files', product.files.first.id) %>
-            <%= image_tag file.href %>
+          <% if product.files %>
+            <% if file = @products.included.find('files', product.files.first.id) %>
+              <%= image_tag file.href %>
+            <% end %>
           <% end %>
           <br/>
           <%= link_to product.name, product_path(product.id) %>

@@ -10,14 +10,12 @@
               <th>Price</th>
               <th>Qty</th>
               <th>Total</th>
-              <th></th>
             </tr>
             <tr>
-              <td><%= item.name %></td>
+              <td><%= item.name %> - <%= link_to 'Remove', remove_carts_path(cart_item_id: item.id), method: :delete %></td>
               <td><%= money(item.unit_price) %></td>
               <td><%= item.quantity %></td>
               <td><%= money(item.value) %></td>
-              <td><%= link_to 'Remove', remove_carts_path(cart_item_id: item.id), method: :delete %></td>
             </tr>
           <% end %>
           <tr>
@@ -25,7 +23,6 @@
             <td></td>
             <td></td>
             <td><%= money(@cart.meta['display_price']['without_tax']) %></td>
-            <td></td>
           </tr>
           <tr>
             <td>Total including taxes:</td>
@@ -34,7 +31,7 @@
             <td><%= money(@cart.meta['display_price']['with_tax']) %></td>
           </tr>
         </table>
-        <%= link_to 'Checkout', root_path, class: 'btn btn-primary pull-right' %>
+        <%= link_to 'Checkout', checkout_path, class: 'btn btn-primary pull-right' %>
         <div class='clearfix'></div>
       <% else %>
         Your cart is empty.

@@ -1,7 +1,7 @@
 Moltin.configure do |config|
-  config.client_id = 'FTtrUHsKHstAOtAhN2VjKbpvK08ZXOKZ0GAQaiIAcc'
-  config.client_secret = 'iFUwmVrwIOWwJrSR70gUtNQ5vIKRwc2RJVyXdid4tc'
+  config.client_id = 'gG8bfJsbaFAjXxRFCXBIIWaTTVSLyGRsAQgPALhhgQ'
+  config.client_secret = 'Ifk1NXAjFqImYfP0oOLhapM9VyxTLWM6kOBGoBFAjs'
   config.currency_code = 'USD'
   config.language = 'en'
-  config.locale = 'en_us'     
+  config.locale = 'en_us'
 end

@@ -1,19 +1,19 @@
 <div class='row'>
   <div class='col-xs-12 col-md-4 col-md-offset-4'>
     <div class='well'>
-      <%- if file = @product.included.find('files', @product.files.first.id) %>
-        <%= image_tag file.href %>
+      <% if @product.files %>
+        <%- if file = @product.included.find('files', @product.files.first.id) %>
+          <%= image_tag file.href %>
+        <% end %>
       <% end %>
       <br/>
       <%= @product.name %>
       <br/><br/>
       <div class='row'>
-        <%- @product.files.each do |file| %>
-          <%- if included_file = @product.included.find('files', file.id) %>
-            <div class='col-xs-12 col-md-3'>
-              <%= image_tag included_file.href %>
-            </div>
-          <% end %>
+        <%- @images.each do |image| %>
+          <div class='col-xs-12 col-md-3'>
+            <%= image_tag image.href %>
+          </div>
         <% end %>
       </div>
       <div class='row'>

@@ -15,5 +15,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = moltin.products.get(params[:id]).with(:files)
+    @images = (@product.files || []).drop(1).map { |f| @product.included.find('files', f.id) }
   end
 end
