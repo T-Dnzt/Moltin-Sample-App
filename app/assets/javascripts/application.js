@@ -15,7 +15,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-$('input[name=cardNumber]').payment('formatCardNumber');
-$('input[name=cardCVC]').payment('formatCardCVC');
-$('input[name=cardExpiry').payment('formatCardExpiry');

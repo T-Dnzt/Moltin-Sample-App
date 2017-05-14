@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post '/checkout', to: 'checkout#create', as: 'create_checkout'
   get '/payment', to: 'checkout#payment', as: 'payment'
   post '/pay', to: 'checkout#pay', as: 'pay'
-  post '/confirm', to: 'checkout#confirm', as: 'confirm'
+  get '/confirm', to: 'checkout#confirm', as: 'confirm'
 
   root to: 'products#index'
 end
