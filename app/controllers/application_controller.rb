@@ -2,7 +2,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def moltin
-    @moltin ||= Moltin::Client.new({ storage: session })
+    @moltin ||= Moltin::Client.new({
+      storage: session,
+      logger: Rails.logger
+    })
   end
 
   def cart

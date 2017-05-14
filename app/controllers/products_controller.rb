@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
                                 filter(eq: { status: 'live' })
 
     @query = params[:query]
-    @products = @products.filter(like: { name: "*#{@query}*" }) if @query.present?
+    @products = @products.filter(like: { name: "'*#{@query}*'" }) if @query.present?
     @page = @products.response_meta['page']
   end
 
