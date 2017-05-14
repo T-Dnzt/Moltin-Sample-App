@@ -1,7 +1,9 @@
-PATH
-  remote: ../ruby-sdk
+GIT
+  remote: https://github.com/moltin/ruby-sdk.git
+  revision: 2f133d33a056ef500c95ee0414ce03e011b19fa8
+  branch: v2
   specs:
-    moltin (0.1.0)
+    moltin (0.9.0)
       faraday (~> 0.11)
 
 GEM
@@ -63,7 +65,7 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.7.0)
-    faraday (0.11.0)
+    faraday (0.12.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.17)
     font-awesome-rails (4.7.0.1)

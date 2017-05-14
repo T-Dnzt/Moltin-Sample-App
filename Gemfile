@@ -39,7 +39,7 @@ gem 'money'
 gem 'font-awesome-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 
-gem 'moltin', path: '../ruby-sdk'
+gem 'moltin', github: 'moltin/ruby-sdk', branch: 'v2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

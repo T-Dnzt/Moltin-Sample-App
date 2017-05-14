@@ -7,9 +7,9 @@ class CheckoutController < ApplicationController
       name: "#{params[:first_name]} #{params[:last_name]}",
       email: params[:email]
     }
-    order = moltin.carts.checkout(cart_ref, customer: customer,
-                                            billing_address: fake_address,
-                                            shipping_address: fake_address).data
+    order = cart.checkout(customer: customer,
+                          billing_address: fake_address,
+                          shipping_address: fake_address).data
     session[:order_id] = order.id
     session[:first_name] = params[:first_name]
     session[:last_name] = params[:last_name]
@@ -48,14 +48,14 @@ class CheckoutController < ApplicationController
   # to deliver the products.
   def fake_address
     {
-      "first_name": "Jack",
-      "last_name": "Macdowall",
-      "company_name": "Macdowalls",
-      "line_1": "1225 Invention Avenue",
-      "line_2": "Birmingham",
-      "postcode": "B21 9AF",
-      "county": "West Midlands",
-      "country": "UK"
+      first_name: 'Jack',
+      last_name: 'Macdowall',
+      company_name: 'Macdowalls',
+      line_1: '1225 Invention Avenue',
+      line_2: 'Birmingham',
+      postcode: 'B21 9AF',
+      county: 'West Midlands',
+      country: 'UK'
     }
   end
 end
